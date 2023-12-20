@@ -1,20 +1,11 @@
-<?php require("../connection/config.php");  ?>
+<?php require("../inc/header.php"); ?>
+
+<?php require("../inc/navbar.php"); ?>
 
 
-<!doctype html>
-<html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-    <title>Login</title>
-</head>
-
-<body>
 
     <section>
-        <div class="container w-25 py-5 shadow my-5">
+        <div class="container py-5 shadow my-5">
             <div class="title mb-3 text-center">
                 <h4>Admin Register</h4>
             </div>
@@ -38,7 +29,7 @@
                             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                         </div>
                     <?php
-                        echo Header("Refresh:2");
+                        echo Header("Refresh:1; url=index.php");
                     } else {
                     ?>
                         <div class="alert alert-danger alert-dismissible fade show" role="alert">
@@ -61,7 +52,7 @@
             mysqli_close($con);
 
             ?>
-            <form action="" method="POST" enctype="multipart/form-data">
+            <form action="" class="w-75 mx-auto d-sm-block " method="POST" enctype="multipart/form-data">
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Name </label>
                     <input type="text" name="name" value="" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
@@ -89,7 +80,4 @@
         </div>
     </section>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
-</body>
-
-</html>
+   <?php require("../inc/footer.php"); ?>
