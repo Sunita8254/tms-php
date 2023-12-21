@@ -19,6 +19,7 @@
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="../users/create.php">User</a></li>
+                            <li><a class="dropdown-item" href="../filemanagers/create.php">File</a></li>
                         </ul>
                     </li>
 
@@ -28,6 +29,7 @@
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="../users/index.php">User</a></li>
+                            <li><a class="dropdown-item" href="../filemanagers/index.php">File</a></li>
                         </ul>
                     </li>
                 </ul>
