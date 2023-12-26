@@ -26,7 +26,7 @@
                 $str=str_replace(" ", "", $firstname);
                 $finalname=$str. time().".".$ext;
 
-                
+
                 if($title!="" && $finalname!=""){
                     if($filesize<=200000){
                         if($ext=="jpg" || $ext=="png" || $ext=="jpeg" || $ext=="mp4" ||$ext=="pdf"){
@@ -39,7 +39,6 @@
                                 }
                                 else{
                                     echo "File is not inserted";
-
                                 }
                             }
                             else{

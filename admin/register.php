@@ -28,26 +28,41 @@
                 $password = md5($_POST['password']);
 
                 if ($name != "" && $phone != "" && $email != "" && $password != "") {
-                    $insert = "INSERT INTO users (name, phone, email, password) 
-                    VALUES ('$name','$phone', '$email', '$password')";
-                    $result =  mysqli_query($con, $insert);
-                    if ($result) {
-            ?>
-                        <div class="alert alert-success alert-dismissible fade show" role="alert">
-                            <strong>Data is added</strong>
-                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                        </div>
-                    <?php
-                        echo Header("Refresh:2");
-                    } else {
-                    ?>
-                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                            <strong>Data is not added</strong>
-                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                        </div>
-                    <?php
-                        echo Header("Refresh:2");
+
+                    $query = "SELECT * FROM users WHERE email='$email'";
+
+                    // Execute the query
+                    $result = mysqli_query($con, $query);
+
+                    // Check if the query returned any rows
+                    if (mysqli_num_rows($result) > 0) {
+                        // User with the same username already exists, display an error message
+                        echo "<p>Email already taken.</p>";
+                        header("Refresh:1");
+                    } else{
+                        $insert = "INSERT INTO users (name, phone, email, password) 
+                        VALUES ('$name','$phone', '$email', '$password')";
+                        $result =  mysqli_query($con, $insert);
+                        if ($result) {
+                ?>
+                            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                <strong>Data is added</strong>
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                        <?php
+                            echo Header("Refresh:2");
+                        } else {
+                        ?>
+                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                <strong>Data is not added</strong>
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                        <?php
+                            echo Header("Refresh:2");
+                        }
                     }
+
+                
                 } else {
                     ?>
                     <div class="alert alert-warning alert-dismissible fade show" role="alert">

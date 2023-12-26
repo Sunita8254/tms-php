@@ -1,3 +1,5 @@
+<?php require("connection/config.php"); ?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -13,17 +15,17 @@
         <div class="title mb-3 text-center">
             <h4>Admin Login</h4>
         </div>
-        <form action="" method="" enctype="multipart/form-data">
+        <form action="loginprocess/login.php" method="POST" enctype="multipart/form-data">
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Email </label>
-            <input type="email" name="" value="" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <input type="email" name="email" value="" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
           </div>
           <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1">
+            <input type="password" name="password" class="form-control" id="exampleInputPassword1">
           </div>
           <div>
-          <button type="submit" name="save" class="btn btn-primary">Submit</button>
+          <button type="submit" name="submit" class="btn btn-primary">Submit</button>
           </div>
           <div class="my-3">
             <span>I Haven't any account</span>
